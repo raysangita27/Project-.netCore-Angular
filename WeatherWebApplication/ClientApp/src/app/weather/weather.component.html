@@ -1,0 +1,25 @@
+<h1>Weather Check</h1>
+
+<input type="text" id="city" [(ngModel)] ="ChosenCity"/>
+<input type="button" value="Get Weather" (click)="getWeatherByCityName(ChosenCity)"/>
+<div *ngIf="weatherDetails">
+  
+  <table class="table table-bordered table-striped">
+    <thead>
+
+      <tr>
+        <th>Temparature</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let i of  weatherDetails">
+      <tr>{{i?.city}} </tr>
+      <tr>
+        <td> {{i?.temp}}</td>
+        <td> {{i?.summary}}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>
